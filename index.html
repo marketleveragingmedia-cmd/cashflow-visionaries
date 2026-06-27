@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Network Leveraging Cash Flow presents Cash Flow Visionaries — The Movement." />
+  <title>Cash Flow Visionaries | Network Leveraging Cash Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#1E8E5A;
+      --green-dark:#0A5D39;
+      --green-deep:#063B25;
+      --gold:#C9A441;
+      --gold-light:#E6CF87;
+      --white:#FFFFFF;
+      --soft:#F6FAF7;
+      --ink:#18362A;
+      --muted:#5B6E64;
+      --line:#DCECE2;
+      --radius:16px;
+      --shadow:0 12px 32px rgba(6,59,37,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--white);color:var(--ink);font-family:"Montserrat",Arial,sans-serif;font-size:16px;line-height:1.62}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .section{padding:68px 0}
+    .eyebrow{margin:0 0 10px;color:var(--green);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+    h1,h2,h3,p{margin-top:0}
+    h2{margin-bottom:14px;color:var(--green-deep);font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.2;letter-spacing:-.025em}
+    h3{font-size:1.03rem;line-height:1.35}
+    .copy{max-width:760px;color:var(--muted);font-size:.98rem}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 20px;border:0;border-radius:7px;background:var(--green);color:#fff;font:800 .82rem "Montserrat",Arial,sans-serif;letter-spacing:.02em;text-transform:uppercase;box-shadow:0 8px 18px rgba(30,142,90,.20);transition:.2s ease}
+    .button:hover{transform:translateY(-2px);background:var(--green-dark);box-shadow:0 11px 24px rgba(30,142,90,.26)}
+    .button.gold{background:var(--gold);color:var(--green-deep);box-shadow:none}
+    .button.gold:hover{background:#D8B95E}
+    .mini{color:var(--muted);font-size:.78rem}
+
+    /* HEADER + HERO */
+    .hero{position:relative;overflow:hidden;background:linear-gradient(115deg,var(--green-deep) 0%,var(--green-dark) 70%,var(--green) 100%);color:#fff}
+    .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:17px 17px;opacity:.55}
+    .hero:after{content:"";position:absolute;width:720px;height:720px;border:1px solid rgba(201,164,65,.42);border-radius:50%;right:-280px;bottom:-470px}
+    .topbar,.hero-content{position:relative;z-index:1}
+    .topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+    .brand-line{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.87);font-size:.68rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase}
+    .brand-mark{display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--gold-light);border-radius:50%;color:var(--gold-light);font-family:"Playfair Display",Georgia,serif;font-size:1.25rem}
+    .cad-top{color:var(--gold-light);font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .hero-content{display:grid;grid-template-columns:1.18fr .82fr;gap:52px;align-items:center;padding:62px 0 64px}
+    .kicker{color:var(--gold-light);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .hero h1{margin:10px 0 14px;font-size:clamp(2.65rem,5.6vw,4.75rem);line-height:.96;letter-spacing:-.05em}
+    .hero h1 .cash{display:block;font-weight:800}
+    .hero h1 .visionaries{display:block;color:var(--gold-light);font-family:"Playfair Display",Georgia,serif;font-weight:700}
+    .movement{margin:4px 0 22px;color:rgba(255,255,255,.9);font-size:.9rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase}
+    .hero .lead{max-width:600px;color:rgba(255,255,255,.84);font-size:1.02rem}
+    .cad-row{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0 26px}
+    .cad-row span{padding:7px 10px;border:1px solid rgba(230,207,135,.55);border-radius:5px;color:#fff;font-size:.73rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .cad-row span:nth-child(2){color:var(--gold-light)}
+    .hero .mini{color:rgba(255,255,255,.62);margin:15px 0 0}
+    .portrait{justify-self:end;width:min(100%,348px);border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.28);background:#0A5D39;box-shadow:0 18px 36px rgba(0,0,0,.19)}
+    .portrait-image{display:block;width:100%;height:390px;object-fit:cover;object-position:center 22%}
+    .portrait-label{padding:13px 16px;background:rgba(4,50,30,.92);border-top:1px solid rgba(230,207,135,.3)}
+    .portrait-label strong{display:block;color:#fff;font-size:.93rem}
+    .portrait-label span{display:block;margin-top:2px;color:var(--gold-light);font-size:.67rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+
+    /* CONTENT */
+    .intro{background:var(--soft)}
+    .two-col{display:grid;grid-template-columns:1.12fr .88fr;gap:42px;align-items:center}
+    .statement{padding:24px;border-left:4px solid var(--gold);background:#fff;box-shadow:var(--shadow)}
+    .statement p{margin:0;color:var(--muted);font-size:.95rem}
+    .statement strong{color:var(--green-deep)}
+
+    .foundation{background:var(--green-deep);color:#fff}
+    .foundation h2{color:#fff}
+    .foundation .eyebrow{color:var(--gold-light)}
+    .foundation .copy{color:rgba(255,255,255,.78)}
+    .framework{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+    .framework-card{padding:21px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:rgba(255,255,255,.05)}
+    .number{display:inline-grid;place-items:center;width:29px;height:29px;margin-bottom:13px;border-radius:50%;border:1px solid var(--gold-light);color:var(--gold-light);font-size:.75rem;font-weight:800}
+    .framework-card h3{margin:0 0 8px;color:var(--gold-light)}
+    .framework-card p{margin:0;color:rgba(255,255,255,.77);font-size:.9rem}
+
+    .resource-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+    .resource{padding:24px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .resource-mark{display:grid;place-items:center;width:38px;height:38px;margin-bottom:14px;border-radius:8px;background:#EEF8F1;color:var(--green);font-size:1.05rem;font-weight:800}
+    .resource h3{margin-bottom:7px;color:var(--green-deep)}
+    .resource p{margin:0;color:var(--muted);font-size:.9rem}
+    .resource em{display:block;margin-top:13px;color:var(--green);font-size:.68rem;font-style:normal;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+
+    .pathway{background:#FFFAEC}
+    .pathway-box{margin-top:27px;padding:28px;border:1px solid rgba(201,164,65,.45);border-radius:13px;background:#fff;box-shadow:var(--shadow)}
+    .pathway-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 26px}
+    .path-step{position:relative;padding:0 12px 0 0}
+    .path-step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:0;color:var(--gold);font-weight:800}
+    .path-step b{display:block;margin-bottom:5px;color:var(--green-deep);font-size:.88rem}
+    .path-step span{color:var(--muted);font-size:.84rem}
+    .pathway-note{margin:17px 0 0;color:var(--muted);font-size:.84rem}
+
+    .future{background:linear-gradient(135deg,#F5FAF6,#fff)}
+    .future-block{padding:27px;border-left:5px solid var(--gold);background:#fff;box-shadow:var(--shadow)}
+    .future-block p{margin:0;color:var(--green-deep);font-size:clamp(1.13rem,2vw,1.5rem);font-weight:700;line-height:1.45}
+    .future-block p + p{margin-top:12px;color:var(--muted);font-size:.92rem;font-weight:500}
+
+    .cta{background:linear-gradient(120deg,var(--green-deep),var(--green-dark));color:#fff;text-align:center}
+    .cta h2{color:#fff}
+    .cta .eyebrow{color:var(--gold-light)}
+    .cta .copy{margin-left:auto;margin-right:auto;color:rgba(255,255,255,.8)}
+    .cta .mini{margin:14px auto 0;color:rgba(255,255,255,.58);max-width:700px}
+
+    footer{padding:23px 0;background:#062B1B;color:rgba(255,255,255,.63);font-size:.72rem}
+    footer .footer-row{display:flex;justify-content:space-between;gap:16px}
+
+    @media (max-width:860px){
+      .hero-content,.two-col{grid-template-columns:1fr;gap:28px}.portrait{justify-self:start}.framework,.pathway-list{grid-template-columns:1fr}.path-step{padding:0}.path-step:not(:last-child):after{display:none}.path-step{padding-bottom:14px;border-bottom:1px solid var(--line)}.path-step:last-child{padding-bottom:0;border-bottom:0}
+    }
+    @media (max-width:620px){
+      .container{width:min(100% - 28px,1120px)}.section{padding:54px 0}.topbar{padding:14px 0}.cad-top{display:none}.hero-content{padding:48px 0 52px}.hero h1{font-size:3rem}.portrait{width:100%}.portrait-image{height:360px}.resource-grid{grid-template-columns:1fr}.button{width:100%}.hero .button{max-width:310px}.brand-line{font-size:.61rem}
+    }
+  </style>
+</head>
+<body>
+  <!-- Only one entry point: every CTA sends visitors to the FREE SKOOL Community. -->
+  <header class="hero">
+    <div class="container topbar">
+      <div class="brand-line"><span class="brand-mark">V</span> Network Leveraging Cash Flow presents</div>
+      <div class="cad-top">Connect · Activate · Duplicate</div>
+    </div>
+    <div class="container hero-content">
+      <div>
+        <div class="kicker">Cash Flow Visionaries</div>
+        <h1><span class="cash">Cash Flow</span><span class="visionaries">Visionaries</span></h1>
+        <div class="movement">The Movement</div>
+        <p class="lead">For Individuals, Families, Communities, Entrepreneurs, Community Leaders and Organizations ready to see Cash Flow, Community and IMPACT differently.</p>
+        <div class="cad-row"><span>Connect</span><span>Activate</span><span>Duplicate</span><span>IMPACT</span></div>
+        <a class="button gold" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
+        <p class="mini">Start with the Manifesto. Explore the Foundation. Join Free.</p>
+      </div>
+      <aside class="portrait" aria-label="MzSamantha, Visionary-Founder">
+        <img class="portrait-image" src="assets/mzsamantha-visionary-founder.png" alt="MzSamantha, Visionary-Founder" />
+        <div class="portrait-label"><strong>MzSamantha</strong><span>Visionary-Founder</span></div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section intro">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Why This Movement Exists</p>
+          <h2>Cash Flow supports the Purpose. People create the IMPACT.</h2>
+          <p class="copy">Most People chase side hustles, platforms, campaigns and the next opportunity without understanding how Cash Flow compounds. Network Leveraging Cash Flow provides a different perspective built around Participation, Peer-to-Peer Connection, Community Compounding and purposeful Duplication.</p>
+        </div>
+        <div class="statement"><p><strong>We are building more than a Community.</strong><br>We are building a Movement that strengthens Individuals, Families, Communities and Organizations through Connection, Participation and Sustainable Community Cash Flow.</p></div>
+      </div>
+    </section>
+
+    <section class="section foundation">
+      <div class="container">
+        <p class="eyebrow">Our Foundation</p>
+        <h2>Connect. Activate. Duplicate.</h2>
+        <p class="copy">The Framework that moves People from Awareness to Action and from Action to lasting IMPACT.</p>
+        <div class="framework">
+          <article class="framework-card"><span class="number">1</span><h3>Connect</h3><p>Through Connection, People discover Possibility, build Relationships and strengthen Community.</p></article>
+          <article class="framework-card"><span class="number">2</span><h3>Activate</h3><p>Through Activation, People execute with Intention. Awareness becomes Action and Understanding leads to Participation.</p></article>
+          <article class="framework-card"><span class="number">3</span><h3>Duplicate</h3><p>Through Duplication, People multiply IMPACT by repeating what works with Purpose.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="foundation">
+      <div class="container">
+        <p class="eyebrow">Start with the Foundation</p>
+        <h2>The Manifesto comes first.</h2>
+        <p class="copy">The Cash Flow Visionaries Manifesto defines what we believe, who we are and how we move. The Cash Flow Circulation Blueprint follows as a foundational learning resource.</p>
+        <div class="resource-grid">
+          <article class="resource"><div class="resource-mark">M</div><h3>Cash Flow Visionaries Manifesto</h3><p>Explore the Foundation, Vision, Mission, Beliefs, Identity, Community, Participation and Future of the Movement.</p><em>What We Believe</em></article>
+          <article class="resource"><div class="resource-mark">B</div><h3>Cash Flow Circulation Blueprint</h3><p>Explore foundational Awareness around decentralized networks, transparency, Participation, Community Compounding and Duplication.</p><em>What We Learn</em></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pathway">
+      <div class="container">
+        <p class="eyebrow">One Pathway to Begin</p>
+        <h2>Join Free. Build Understanding. Upgrade when you are ready.</h2>
+        <p class="copy">Everyone begins in the FREE Network Leveraging Cash Flow SKOOL Community. There is one place to start.</p>
+        <div class="pathway-box">
+          <div class="pathway-list">
+            <div class="path-step"><b>1. Join the FREE Community</b><span>Begin with the Manifesto, Blueprint and classroom experience.</span></div>
+            <div class="path-step"><b>2. Build Understanding</b><span>Explore Cash Flow Marathon: The Solution and the Foundation.</span></div>
+            <div class="path-step"><b>3. Upgrade When Ready</b><span>Premium is the path to becoming an Official Cash Flow Visionary and beginning Participation.</span></div>
+          </div>
+          <a class="button" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
+          <p class="pathway-note">Premium and VIP pathways are available inside the Community after you join Free. There is no separate public entry point.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section future">
+      <div class="container">
+        <p class="eyebrow">The Bigger Vision</p>
+        <h2>The Movement is Bigger than what People can See, Believe and Comprehend.</h2>
+        <div class="future-block"><p>The Vision is Bigger than Location. The Mission is Bigger than Borders.</p><p>We are Changing Lives, Families, Generations, Communities, Countries and the WORLD. We are Not waiting for this to happen. This is already Happening.</p></div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container">
+        <p class="eyebrow">Are You Willing?</p>
+        <h2>Create Sustainable Cash Flow without Borders.</h2>
+        <p class="copy">Join the FREE Network Leveraging Cash Flow SKOOL Community and begin with the Cash Flow Visionaries Manifesto.</p>
+        <a class="button gold" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
+        <p class="mini">Educational content only. Nothing shared is financial, legal or investment advice. Results are not guaranteed.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row"><span>© 2026 Cash Flow Visionaries | Network Leveraging Cash Flow</span><span>Connect. Activate. Duplicate.</span></div>
+  </footer>
+</body>
+</html>

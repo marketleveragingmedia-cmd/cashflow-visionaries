@@ -1,0 +1,21 @@
+{
+  "name": "cashflow-visionaries-lead-page",
+  "version": "2.0.0",
+  "description": "Landing page for Cash Flow Visionaries - Network Leveraging Cash Flow movement",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "serve": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "cash-flow",
+    "network-marketing",
+    "community",
+    "visionaries",
+    "landing-page"
+  ],
+  "author": "MzSamantha - Network Leveraging Cash Flow",
+  "license": "UNLICENSED",
+  "private": true
+}
