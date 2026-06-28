@@ -40,6 +40,25 @@
     .button.gold:hover{background:#D8B95E}
     .mini{color:var(--muted);font-size:.78rem}
 
+    /* Modal Styles */
+    .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); z-index: 9999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.3s; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: white; padding: 40px; border-radius: 12px; max-width: 500px; width: 90%; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.3); animation: slideUp 0.3s; }
+    .modal-close { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 30px; color: #999; cursor: pointer; line-height: 1; padding: 0; width: 30px; height: 30px; }
+    .modal-close:hover { color: #333; }
+    .modal-header h2 { color: var(--green-deep); font-size: 24px; margin-bottom: 10px; line-height: 1.3; }
+    .modal-header p { color: #666; font-size: 16px; margin-bottom: 25px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; color: #333; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+    .form-group input { width: 100%; padding: 12px 16px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; transition: border-color 0.3s; }
+    .form-group input:focus { outline: none; border-color: var(--green); }
+    .modal-btn { width: 100%; padding: 16px; background: var(--green); color: white; border: none; border-radius: 6px; font-size: 18px; font-weight: 700; cursor: pointer; transition: background 0.3s; }
+    .modal-btn:hover { background: var(--green-dark); }
+    .modal-btn:disabled { background: #999; cursor: not-allowed; }
+    .modal-disclosure { background: #FFF9E6; border-left: 4px solid var(--gold); padding: 12px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; color: #333; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
     /* HEADER + HERO */
     .hero{position:relative;overflow:hidden;background:linear-gradient(115deg,var(--green-deep) 0%,var(--green-dark) 70%,var(--green) 100%);color:#fff}
     .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:17px 17px;opacity:.55}
@@ -135,8 +154,8 @@
         <div class="movement">The Movement</div>
         <p class="lead">For Individuals, Families, Communities, Entrepreneurs, Community Leaders and Organizations ready to see Cash Flow, Community and IMPACT differently.</p>
         <div class="cad-row"><span>Connect</span><span>Activate</span><span>Duplicate</span><span>IMPACT</span></div>
-        <a class="button gold" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
-        <p class="mini">Start with the Manifesto. Explore the Foundation. Join Free.</p>
+        <button class="button gold" onclick="cfvShowModal()">Join the FREE SKOOL Community <span>→</span></button>
+        <p class="mini">Start with the Manifesto. Build Understanding. Join Free.</p>
       </div>
       <aside class="portrait" aria-label="MzSamantha, Visionary-Founder">
         <img class="portrait-image" src="assets/mzsamantha-visionary-founder.png" alt="MzSamantha, Visionary-Founder" />
@@ -150,7 +169,7 @@
       <div class="container two-col">
         <div>
           <p class="eyebrow">Why This Movement Exists</p>
-          <h2>Cash Flow supports the Purpose. People create the IMPACT.</h2>
+          <h2>Cash Flow supports Purpose. People create IMPACT.</h2>
           <p class="copy">Most People chase side hustles, platforms, campaigns and the next opportunity without understanding how Cash Flow compounds. Network Leveraging Cash Flow provides a different perspective built around Participation, Peer-to-Peer Connection, Community Compounding and purposeful Duplication.</p>
         </div>
         <div class="statement"><p><strong>We are building more than a Community.</strong><br>We are building a Movement that strengthens Individuals, Families, Communities and Organizations through Connection, Participation and Sustainable Community Cash Flow.</p></div>
@@ -193,7 +212,7 @@
             <div class="path-step"><b>2. Build Understanding</b><span>Explore Cash Flow Marathon: The Solution and the Foundation.</span></div>
             <div class="path-step"><b>3. Upgrade When Ready</b><span>Premium is the path to becoming an Official Cash Flow Visionary and beginning Participation.</span></div>
           </div>
-          <a class="button" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
+          <button class="button" onclick="cfvShowModal()">Join the FREE SKOOL Community <span>→</span></button>
           <p class="pathway-note">Premium and VIP pathways are available inside the Community after you join Free. There is no separate public entry point.</p>
         </div>
       </div>
@@ -212,7 +231,7 @@
         <p class="eyebrow">Are You Willing?</p>
         <h2>Create Sustainable Cash Flow without Borders.</h2>
         <p class="copy">Join the FREE Network Leveraging Cash Flow SKOOL Community and begin with the Cash Flow Visionaries Manifesto.</p>
-        <a class="button gold" href="https://skoo.ly/s/cashflow" target="_blank" rel="noopener">Join the FREE SKOOL Community <span>→</span></a>
+        <button class="button gold" onclick="cfvShowModal()">Join the FREE SKOOL Community <span>→</span></button>
         <p class="mini">Educational content only. Nothing shared is financial, legal or investment advice. Results are not guaranteed.</p>
       </div>
     </section>
@@ -223,3 +242,136 @@
   </footer>
 </body>
 </html>
+
+<!-- Lead Capture Modal -->
+<div id="cfvLeadModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="cfvCloseModal()">&times;</button>
+    <div class="modal-header">
+      <h2>Join the Cash Flow Visionaries Community</h2>
+      <p>Enter your Information to Continue</p>
+    </div>
+    <form id="cfvLeadForm" onsubmit="cfvSubmitLead(event)">
+      <div class="form-group">
+        <label for="cfvFirstName">First Name</label>
+        <input type="text" id="cfvFirstName" name="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="cfvLastName">Last Name</label>
+        <input type="text" id="cfvLastName" name="lastName" required>
+      </div>
+      <div class="form-group">
+        <label for="cfvEmail">Email Address</label>
+        <input type="email" id="cfvEmail" name="email" required>
+      </div>
+      <p class="modal-disclosure">⚠️ <strong>Important:</strong> Please use this EXACT email address when joining the SKOOL Community. This helps us track your progress and provide Personalized Support.</p>
+      <button type="submit" class="modal-btn" id="cfvSubmitBtn">Continue to Community →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Cookie utilities
+  function cfvSetCookie(name, value, days) {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+  }
+
+  function cfvGetCookie(name) {
+    return document.cookie.split('; ').reduce((r, v) => {
+      const parts = v.split('=');
+      return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+    }, '');
+  }
+
+  // Modal functions
+  function cfvShowModal() {
+    // Check cookie
+    if (cfvGetCookie('cfv_captured')) {
+      // Already captured - go directly to SKOOL
+      window.location.href = 'https://www.skool.com/network-leveraging-cash-flow-4401';
+    } else {
+      // Show modal
+      document.getElementById('cfvLeadModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function cfvCloseModal() {
+    document.getElementById('cfvLeadModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  // Submit lead
+  let cfvIsSubmitting = false;
+
+  function cfvSubmitLead(event) {
+    event.preventDefault();
+    
+    // Prevent double submission
+    if (cfvIsSubmitting) {
+      console.log('⚠️ Already submitting, please wait...');
+      return false;
+    }
+    
+    cfvIsSubmitting = true;
+    
+    const btn = document.getElementById('cfvSubmitBtn');
+    const originalText = btn.textContent;
+    
+    // Get form data
+    const firstName = document.getElementById('cfvFirstName').value.trim();
+    const lastName = document.getElementById('cfvLastName').value.trim();
+    const email = document.getElementById('cfvEmail').value.trim();
+    
+    // Disable button
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    
+    // API payload
+    const payload = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      pageUrl: window.location.pathname,
+      avatarTag: 'cash-flow-visionary'
+    };
+    
+    // Call API
+    fetch('https://mlm-lead-crm.vercel.app/api/capture-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('API error: ' + response.status);
+      return response.json();
+    })
+    .then(data => {
+      if (data.success) {
+        // Success - set cookie and redirect
+        cfvSetCookie('cfv_captured', 'true', 30);
+        window.location.href = 'https://www.skool.com/network-leveraging-cash-flow-4401';
+      } else {
+        throw new Error(data.error || 'Unknown error');
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error.message + '\nPlease try again.');
+      btn.textContent = originalText;
+      btn.disabled = false;
+      cfvIsSubmitting = false;
+    });
+  }
+
+  // Intercept all SKOOL links
+  document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href*="skool.com"]');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        cfvShowModal();
+      });
+    });
+  });
+</script>
