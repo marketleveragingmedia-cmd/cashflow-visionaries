@@ -109,7 +109,8 @@
     .resource h3{margin-bottom:7px;color:var(--green-deep)}
     .resource p{margin:0;color:var(--muted);font-size:.9rem}
     .resource em{display:block;margin-top:13px;color:var(--green);font-size:.68rem;font-style:normal;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-    .manifesto-cover{width:100%;border-radius:12px;box-shadow:0 12px 32px rgba(6,59,37,.15);border:1px solid var(--line)}
+    .manifesto-cover-wrapper{display:flex;align-items:flex-start}
+    .manifesto-cover{width:100%;height:auto;object-fit:contain;object-position:top;border-radius:12px;box-shadow:0 12px 32px rgba(6,59,37,.15);border:1px solid var(--line)}
 
     .pathway{background:#FFFAEC}
     .pathway-box{margin-top:27px;padding:28px;border:1px solid rgba(201,164,65,.45);border-radius:13px;background:#fff;box-shadow:var(--shadow)}
@@ -154,7 +155,7 @@
         <div class="kicker">Cash Flow Visionaries</div>
         <h1><span class="cash">Cash Flow</span><span class="visionaries">Visionaries</span></h1>
         <div class="movement">The Movement</div>
-        <p class="lead">For Individuals, Families, Communities, Entrepreneurs, Community Leaders and Organizations ready to see Cash Flow, Community and IMPACT differently.</p>
+        <p class="lead">For Individuals, Families, Communities, Entrepreneurs, Community Leaders and Organizations ready to see Cash Flow, Community and IMPACT in a completely differently way.</p>
         <div class="cad-row"><span>Connect</span><span>Activate</span><span>Duplicate</span><span>IMPACT</span></div>
         <button class="button gold" onclick="cfvShowModal()">Join the FREE SKOOL Community <span>→</span></button>
         <p class="mini">Start with the Manifesto. Build Understanding. Join Free.</p>
@@ -201,7 +202,7 @@
             <article class="resource"><div class="resource-mark">M</div><h3>Cash Flow Visionaries Manifesto</h3><p>Explore the Foundation, Vision, Mission, Beliefs, Identity, Community, Participation and Future of the Movement.</p><em>What We Believe</em></article>
             <article class="resource"><div class="resource-mark">B</div><h3>Cash Flow Circulation Blueprint</h3><p>Explore foundational Awareness around decentralized networks, transparency, Participation, Community Compounding and Duplication.</p><em>What We Learn</em></article>
           </div>
-          <div>
+          <div class="manifesto-cover-wrapper">
             <img src="assets/manifesto-cover.jpg" alt="Cash Flow Visionaries Manifesto - Foundation Version 1.0" class="manifesto-cover">
           </div>
         </div>
