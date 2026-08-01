@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/participate",
-      "destination": "/participate.html",
+      "source": "/founder",
+      "destination": "/founder.html",
       "permanent": false
     },
     {
