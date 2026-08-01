@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cash Flow Visionaries | Founders Beta Participation" />
+  <title>Founders Beta Participation | Cash Flow Visionaries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#1E8E5A;
+      --green-dark:#0A5D39;
+      --green-deep:#063B25;
+      --forest:#0F4C35;
+      --gold:#C9A441;
+      --gold-rich:#C9A961;
+      --gold-light:#E6CF87;
+      --white:#FFFFFF;
+      --cream:#F9F6F0;
+      --soft:#F6FAF7;
+      --ivory:#FFFEF9;
+      --ink:#1A1A1A;
+      --muted:#5B6E64;
+      --line:#DCECE2;
+      --radius:16px;
+      --shadow:0 6px 24px rgba(15,76,53,.08);
+      --shadow-card:0 4px 16px rgba(15,76,53,.06);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--white);
+      color:var(--ink);
+      font-family:"Montserrat",Arial,sans-serif;
+      font-size:16px;
+      line-height:1.65;
+      padding:0;
+      min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .section{padding:64px 0}
+
+    /* HEADER */
+    .header{
+      background:rgba(255,255,255,.98);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(220,236,226,.5);
+      padding:20px 0;
+      position:sticky;
+      top:0;
+      z-index:100;
+      box-shadow:0 2px 12px rgba(15,76,53,.04);
+    }
+    .brand-logo{
+      display:block;
+      height:56px;
+      width:auto;
+      transition:transform .3s ease;
+    }
+    .brand-logo:hover{
+      transform:scale(1.03);
+    }
+
+    /* HERO SECTION */
+    .hero{
+      background:linear-gradient(135deg, var(--forest) 0%, var(--green-dark) 100%);
+      padding:72px 0 68px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:'';
+      position:absolute;
+      top:-200px;
+      right:-200px;
+      width:500px;
+      height:500px;
+      background:radial-gradient(circle, rgba(201,169,97,.12) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .hero:after{
+      content:'';
+      position:absolute;
+      bottom:-150px;
+      left:-150px;
+      width:400px;
+      height:400px;
+      background:radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .hero-content{
+      text-align:center;
+      max-width:880px;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+    }
+    .hero-eyebrow{
+      color:var(--gold-light);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      opacity:0;
+      animation:fadeInUp .8s ease-out .2s forwards;
+    }
+    .hero-eyebrow:before,
+    .hero-eyebrow:after{
+      content:'◆';
+      font-size:.5rem;
+      color:var(--gold-light);
+    }
+    .hero h1{
+      margin:0 0 44px;
+      color:var(--white);
+      font-size:clamp(2rem,3.5vw,2.8rem);
+      font-weight:700;
+      line-height:1.2;
+      letter-spacing:-.015em;
+      opacity:0;
+      animation:fadeInUp .8s ease-out .3s forwards;
+    }
+    .hero h1 .gold-accent{
+      color:var(--gold-light);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      max-width:900px;
+      margin:0 auto;
+      opacity:0;
+      animation:fadeInUp .8s ease-out .4s forwards;
+    }
+    .hero-box{
+      background:rgba(255,255,255,.97);
+      border:1px solid rgba(201,169,97,.4);
+      border-radius:10px;
+      padding:24px 28px;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      transition:all .3s ease;
+      box-shadow:0 3px 12px rgba(0,0,0,.06);
+    }
+    .hero-box:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 20px rgba(201,169,97,.15);
+      border-color:var(--gold-rich);
+    }
+    .hero-box-icon{
+      width:40px;
+      height:40px;
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, var(--forest), var(--green));
+      border-radius:50%;
+      color:var(--gold-light);
+      font-size:1.1rem;
+    }
+    .hero-box-content{
+      flex:1;
+      text-align:left;
+    }
+    .hero-box-title{
+      color:var(--gold-rich);
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+    .hero-box-text{
+      color:var(--ink);
+      font-size:.9rem;
+      line-height:1.5;
+      font-weight:500;
+    }
+    @keyframes fadeInUp{
+      from{
+        opacity:0;
+        transform:translateY(24px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* CHOOSE SECTION */
+    .choose{
+      background:var(--cream);
+      padding:72px 0 80px;
+      position:relative;
+    }
+    .choose h2{
+      text-align:center;
+      margin:0 0 52px;
+      color:var(--forest);
+      font-size:clamp(1.5rem,2.4vw,2rem);
+      font-weight:700;
+      letter-spacing:-.02em;
+      position:relative;
+    }
+    .choose h2:after{
+      content:'◆';
+      display:block;
+      margin:16px auto 0;
+      color:var(--gold-rich);
+      font-size:.65rem;
+    }
+
+    /* FOUNDER OPTIONS GRID */
+    .founder-options{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:32px;
+      max-width:1040px;
+      margin:0 auto;
+    }
+    .founder-card{
+      background:var(--white);
+      border:2px solid var(--gold-rich);
+      border-radius:16px;
+      padding:40px 36px 44px;
+      box-shadow:0 8px 32px rgba(15,76,53,.1);
+      transition:all .35s cubic-bezier(.4,0,.2,1);
+      position:relative;
+      overflow:hidden;
+    }
+    .founder-card:before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:4px;
+      background:linear-gradient(90deg, var(--green), var(--gold-rich));
+    }
+    .founder-card:hover{
+      border-color:var(--green);
+      box-shadow:0 16px 48px rgba(30,142,90,.2);
+      transform:translateY(-8px);
+    }
+    .founder-card-header{
+      text-align:center;
+      margin-bottom:32px;
+      padding-bottom:28px;
+      border-bottom:2px solid var(--line);
+      position:relative;
+    }
+    .founder-card-header:after{
+      content:'◆';
+      position:absolute;
+      bottom:-8px;
+      left:50%;
+      transform:translateX(-50%);
+      color:var(--gold-rich);
+      font-size:.55rem;
+      background:var(--white);
+      padding:0 8px;
+    }
+    .founder-card-title{
+      color:var(--forest);
+      font-size:1.08rem;
+      font-weight:800;
+      letter-spacing:.08em;
+      margin-bottom:14px;
+      text-transform:uppercase;
+    }
+    .founder-card-price{
+      color:var(--gold-rich);
+      font-size:2.3rem;
+      font-weight:800;
+      letter-spacing:-.025em;
+      margin-bottom:6px;
+      line-height:1;
+    }
+    .founder-card-term{
+      color:var(--muted);
+      font-size:.82rem;
+      font-weight:600;
+      font-style:italic;
+      letter-spacing:.03em;
+    }
+    .founder-card-benefits{
+      list-style:none;
+      margin:0 0 36px;
+      padding:0;
+    }
+    .founder-card-benefits li{
+      padding:12px 0 12px 28px;
+      color:var(--ink);
+      font-size:.88rem;
+      font-weight:500;
+      line-height:1.55;
+      border-bottom:1px solid rgba(220,236,226,.4);
+      position:relative;
+      transition:padding-left .25s ease;
+    }
+    .founder-card-benefits li:last-child{
+      border-bottom:none;
+    }
+    .founder-card-benefits li:hover{
+      padding-left:32px;
+    }
+    .founder-card-benefits li:before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--green);
+      font-weight:800;
+      font-size:1.05rem;
+    }
+    button.founder-card-cta,
+    .founder-card-cta{
+      width:100%;
+      padding:16px 28px;
+      background:#C9A961 !important;
+      background:linear-gradient(135deg, #C9A961 0%, #B8954F 100%) !important;
+      color:#FFFFFF !important;
+      border:none !important;
+      border-radius:10px;
+      font-size:.88rem;
+      font-weight:800;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:all .3s ease;
+      box-shadow:0 6px 20px rgba(201,169,97,.25) !important;
+      position:relative;
+      overflow:hidden;
+    }
+    .founder-card-cta:before{
+      content:'';
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:0;
+      height:0;
+      border-radius:50%;
+      background:rgba(255,255,255,.12);
+      transform:translate(-50%,-50%);
+      transition:width .5s ease, height .5s ease;
+    }
+    .founder-card-cta:hover:before{
+      width:300px;
+      height:300px;
+    }
+    button.founder-card-cta:not(:disabled):hover,
+    .founder-card-cta:not(:disabled):hover{
+      background:#B8954F !important;
+      background:linear-gradient(135deg, #B8954F 0%, #C9A961 100%) !important;
+      box-shadow:0 10px 32px rgba(201,169,97,.35);
+      transform:translateY(-2px);
+    }
+    .founder-card-cta:active{
+      transform:translateY(0);
+    }
+    button.founder-card-cta:disabled,
+    .founder-card-cta:disabled{
+      background:#CCCCCC !important;
+      background:linear-gradient(135deg, #CCCCCC 0%, #999999 100%) !important;
+      cursor:not-allowed !important;
+      opacity:0.5 !important;
+      box-shadow:0 2px 8px rgba(0,0,0,.1) !important;
+      filter:grayscale(1) !important;
+    }
+    .founder-card-cta:disabled:before{
+      display:none;
+    }
+
+    /* DISCLOSURE SECTION */
+    .disclosure-section{
+      max-width:920px;
+      margin:56px auto 0;
+      background:var(--white);
+      border:2px solid var(--gold-rich);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:0 6px 24px rgba(15,76,53,.08);
+    }
+    .disclosure-header{
+      background:linear-gradient(135deg, var(--cream) 0%, #FAF5EC 100%);
+      padding:22px 28px;
+      border-bottom:2px solid rgba(201,169,97,.2);
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      transition:all .3s ease;
+    }
+    .disclosure-header:hover{
+      background:linear-gradient(135deg, #F5EFE4 0%, var(--cream) 100%);
+      padding-left:32px;
+    }
+    .disclosure-title{
+      color:var(--forest);
+      font-size:1rem;
+      font-weight:700;
+      letter-spacing:.015em;
+      transition:color .3s ease;
+    }
+    .disclosure-header:hover .disclosure-title{
+      color:var(--green);
+    }
+    .disclosure-toggle{
+      color:var(--gold-rich);
+      font-size:1.3rem;
+      font-weight:700;
+      transition:transform .3s ease;
+    }
+    .disclosure-toggle.open{
+      transform:rotate(180deg);
+    }
+    .disclosure-body{
+      max-height:0;
+      padding:0 28px;
+      color:var(--ink);
+      font-size:.87rem;
+      line-height:1.72;
+      overflow:hidden;
+      transition:max-height .5s ease, padding .5s ease;
+    }
+    .disclosure-body.open{
+      max-height:800px;
+      padding:30px 28px;
+    }
+    .disclosure-body p{
+      margin:0 0 16px;
+    }
+    .disclosure-body p:last-child{
+      margin-bottom:0;
+    }
+
+    /* ACKNOWLEDGMENT SECTION */
+    .acknowledgment-section{
+      max-width:920px;
+      margin:36px auto 0;
+      background:var(--white);
+      border:2px solid var(--gold-rich);
+      border-radius:14px;
+      padding:30px 32px;
+      box-shadow:0 6px 20px rgba(201,169,97,.12);
+    }
+    .acknowledgment-checkbox{
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+      cursor:pointer;
+    }
+    .acknowledgment-checkbox input[type="checkbox"]{
+      width:20px;
+      height:20px;
+      margin-top:2px;
+      cursor:pointer;
+      accent-color:var(--green);
+      flex-shrink:0;
+    }
+    .acknowledgment-text{
+      color:var(--ink);
+      font-size:.87rem;
+      line-height:1.7;
+      font-weight:500;
+    }
+
+    /* CLOSING */
+    .closing{
+      background:linear-gradient(135deg, var(--forest) 0%, var(--green-dark) 100%);
+      padding:68px 0 56px;
+      text-align:center;
+      position:relative;
+    }
+    .closing h3{
+      color:var(--white);
+      font-size:1.35rem;
+      font-weight:700;
+      margin-bottom:16px;
+      letter-spacing:-.01em;
+    }
+    .closing-tagline{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      color:var(--gold-light);
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-top:16px;
+    }
+    .closing-tagline span{
+      font-size:.5rem;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:24px 0;
+      background:#062B1B;
+      color:rgba(255,255,255,.65);
+      font-size:.72rem;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+    .footer-links{
+      display:flex;
+      gap:20px;
+    }
+    .footer-links a{
+      color:var(--gold-light);
+      font-weight:600;
+      letter-spacing:.04em;
+      transition:color .3s ease;
+      text-decoration:none;
+    }
+    .footer-links a:hover{
+      color:var(--white);
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .founder-options{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .section{
+        padding:52px 0;
+      }
+      .hero{
+        padding:56px 0 52px;
+      }
+      .hero h1{
+        margin-bottom:24px;
+        font-size:clamp(1.75rem,7vw,2.4rem);
+      }
+      .hero-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .hero-box{
+        padding:20px 22px;
+        gap:16px;
+      }
+      .hero-box-icon{
+        width:36px;
+        height:36px;
+        font-size:1rem;
+      }
+      .hero-box-text{
+        font-size:.86rem;
+      }
+      .choose{
+        padding:56px 0 64px;
+      }
+      .closing{
+        padding:56px 0 64px;
+      }
+      .founder-card{
+        padding:36px 30px 40px;
+      }
+      .founder-card-price{
+        font-size:2.1rem;
+      }
+      .brand-logo{
+        height:50px;
+      }
+      .disclosure-section,
+      .acknowledgment-section{
+        margin-left:20px;
+        margin-right:20px;
+      }
+      .disclosure-header,
+      .disclosure-body.open{
+        padding-left:22px;
+        padding-right:22px;
+      }
+      .acknowledgment-section{
+        padding:26px 22px;
+      }
+      .closing-tagline{
+        font-size:.75rem;
+      }
+      .footer-row{
+        flex-direction:column;
+        text-align:center;
+        gap:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="/">
+        <img src="../assets/cash-flow-visionaries-logo.jpg" alt="Cash Flow Visionaries - The Movement" class="brand-logo">
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">Network Leveraging Cash Flow</div>
+        <h1>The <span class="gold-accent">Founder-Beta</span> Invitation</h1>
+        <div class="hero-grid">
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Vision</div>
+              <div class="hero-box-text">You Understand the Vision.</div>
+            </div>
+          </div>
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Mission</div>
+              <div class="hero-box-text">You Believe in the Mission.</div>
+            </div>
+          </div>
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Purpose</div>
+              <div class="hero-box-text">You Support the Purpose.</div>
+            </div>
+          </div>
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Participate</div>
+              <div class="hero-box-text">You are willing to Participate.</div>
+            </div>
+          </div>
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Support</div>
+              <div class="hero-box-text">You are willing to Support.</div>
+            </div>
+          </div>
+          <div class="hero-box">
+            <div class="hero-box-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18 12v6h-3v-5H9v5H6v-6l6-6.16z"/></svg>
+            </div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Foundation</div>
+              <div class="hero-box-text">You are willing to help Establish the Foundation of the Movement.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE SECTION -->
+  <section class="choose">
+    <div class="container">
+      <h2>Choose How You Are Willing to Participate.</h2>
+
+      <!-- FOUNDER OPTIONS -->
+      <div class="founder-options">
+        
+        <!-- CITIZEN FOUNDER-BETA -->
+        <div class="founder-card">
+          <div class="founder-card-header">
+            <h3 class="founder-card-title">Citizen Founder-Beta</h3>
+            <div class="founder-card-price">$1,497</div>
+            <div class="founder-card-term">One Time</div>
+          </div>
+          <ul class="founder-card-benefits">
+            <li>Founder-Beta Positioning</li>
+            <li>Founder Orientation and Private Education</li>
+            <li>Applicable Onboarding and Wallet Activation</li>
+            <li>Applicable Blockchain-Fee Coverage</li>
+            <li>CAS Team Admin — Lifetime Access</li>
+            <li>Expanded Founder Resources and Support</li>
+            <li>Future Annual Premium Membership Renewals Waived</li>
+          </ul>
+          <button class="cta-btn-gold" id="citizen-cta" disabled style="width:100%;padding:16px 28px;background:#C9A961;background:linear-gradient(135deg,#C9A961,#B8954F);color:#FFF;border:none;border-radius:10px;font-size:.88rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 20px rgba(201,169,97,.3);">Become a Citizen Founder-Beta</button>
+        </div>
+
+        <!-- ENTERPRISE FOUNDER-BETA -->
+        <div class="founder-card">
+          <div class="founder-card-header">
+            <h3 class="founder-card-title">Enterprise Founder-Beta</h3>
+            <div class="founder-card-price">$1,997</div>
+            <div class="founder-card-term">One Time</div>
+          </div>
+          <ul class="founder-card-benefits">
+            <li>Founder-Beta Positioning</li>
+            <li>Founder Orientation and Private Education</li>
+            <li>Applicable Onboarding and Wallet Activation</li>
+            <li>Applicable Blockchain-Fee Coverage</li>
+            <li>Enterprise Ecosystem Access</li>
+            <li>CAS Main Admin — Lifetime Access</li>
+            <li>Expanded Founder Resources and Support</li>
+            <li>Future Annual Premium Membership Renewals Waived</li>
+          </ul>
+          <button class="cta-btn-gold" id="enterprise-cta" disabled style="width:100%;padding:16px 28px;background:#C9A961;background:linear-gradient(135deg,#C9A961,#B8954F);color:#FFF;border:none;border-radius:10px;font-size:.88rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;box-shadow:0 6px 20px rgba(201,169,97,.3);">Become an Enterprise Founder-Beta</button>
+        </div>
+
+      </div>
+
+      <!-- DISCLOSURE SECTION -->
+      <div class="disclosure-section">
+        <div class="disclosure-header" id="disclosure-header">
+          <h4 class="disclosure-title">Founder-Beta Investment Disclosure</h4>
+          <span class="disclosure-toggle" id="disclosure-toggle">▼</span>
+        </div>
+        <div class="disclosure-body" id="disclosure-body">
+          <p>The term "Founder-Beta Investment" refers to the one-time payment made to participate in the Cash Flow Visionaries | Network Leveraging Cash Flow Founder-Beta experience and receive the applicable Founder-Beta benefits, education, resources, support and access described in this offer.</p>
+          
+          <p>The term "Investment" is used in the ordinary sense of committing financial resources toward participation in the Founder-Beta experience. Founder-Beta participation does not represent the purchase of stock, equity, securities, voting rights or ownership in Cash Flow Visionaries, Network Leveraging Cash Flow or any related entity.</p>
+          
+          <p>Founder-Beta participation does not guarantee income, earnings, financial returns or business results.</p>
+          
+          <p>Cash Flow Visionaries and Network Leveraging Cash Flow provide education, information, resources, community support and participation tools. Nothing presented through the Founder-Beta experience, presentation, education, resources or related communications constitutes financial, investment, legal or tax advice.</p>
+        </div>
+      </div>
+
+      <!-- ACKNOWLEDGMENT SECTION -->
+      <div class="acknowledgment-section">
+        <label class="acknowledgment-checkbox">
+          <input type="checkbox" id="acknowledgment-checkbox">
+          <span class="acknowledgment-text">
+            I acknowledge that I am making a one-time payment to participate in the Founder-Beta experience and receive the applicable Founder-Beta benefits and resources. I understand that Founder-Beta participation does not represent equity, securities or ownership and does not guarantee income, earnings, financial returns or business results. I also understand that the information and education provided are not financial, investment, legal or tax advice.
+          </span>
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="container">
+      <h3>One Founder Investment.<br>Lifetime Founder Advantages.</h3>
+      <div class="closing-tagline">
+        Connect <span>◆</span> Activate <span>◆</span> Duplicate
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Cash Flow Visionaries | Network Leveraging Cash Flow</span>
+      <div class="footer-links">
+        <a href="https://www.networkleveragingcashflow.net/terms" target="_blank">Terms of Service</a>
+        <a href="https://www.networkleveragingcashflow.net/privacy" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // STRIPE PAYMENT LINK CONFIGURATION
+    const STRIPE_LINKS = {
+      citizen: 'https://buy.stripe.com/00w4gz9L91zA72B0dH1VK00',
+      enterprise: 'https://buy.stripe.com/7sYeVdf5t3HI86F5y11VK01'
+    };
+
+    // DISCLOSURE TOGGLE
+    const disclosureHeader = document.getElementById('disclosure-header');
+    const disclosureBody = document.getElementById('disclosure-body');
+    const disclosureToggle = document.getElementById('disclosure-toggle');
+
+    disclosureHeader.addEventListener('click', () => {
+      disclosureBody.classList.toggle('open');
+      disclosureToggle.classList.toggle('open');
+    });
+
+    // ACKNOWLEDGMENT CHECKBOX CONTROL
+    const acknowledgmentCheckbox = document.getElementById('acknowledgment-checkbox');
+    const citizenCTA = document.getElementById('citizen-cta');
+    const enterpriseCTA = document.getElementById('enterprise-cta');
+
+    acknowledgmentCheckbox.addEventListener('change', () => {
+      const isChecked = acknowledgmentCheckbox.checked;
+      citizenCTA.disabled = !isChecked;
+      enterpriseCTA.disabled = !isChecked;
+    });
+
+    // CTA BUTTON HANDLERS
+    citizenCTA.addEventListener('click', () => {
+      if (!STRIPE_LINKS.citizen) {
+        alert('Stripe Payment Link not yet configured. Please contact support.');
+        return;
+      }
+      window.location.href = STRIPE_LINKS.citizen;
+    });
+
+    enterpriseCTA.addEventListener('click', () => {
+      if (!STRIPE_LINKS.enterprise) {
+        alert('Stripe Payment Link not yet configured. Please contact support.');
+        return;
+      }
+      window.location.href = STRIPE_LINKS.enterprise;
+    });
+  </script>
+
+</body>
+</html>
