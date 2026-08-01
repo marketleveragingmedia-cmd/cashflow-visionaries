@@ -231,7 +231,7 @@
     const sessionId = params.get('session_id');
 
     if (!sessionId) {
-      window.location.href = '/founders-beta/participate.html';
+      window.location.href = '/founders-beta/participate';
     }
 
     // Verify payment with backend API
@@ -239,7 +239,7 @@
       .then(res => res.json())
       .then(data => {
         if (!data.verified || data.paymentStatus !== 'paid') {
-          window.location.href = '/founders-beta/participate.html';
+          window.location.href = '/founders-beta/participate';
           return;
         }
 
@@ -271,7 +271,7 @@
                 Orientation.
               </p>
               <div class="cta-wrapper">
-                <a href="/founders-beta/intake.html?session_id=${sessionId}" class="cta-btn">
+                <a href="/founders-beta/intake?session_id=${sessionId}" class="cta-btn">
                   Complete Your Founder Intake
                 </a>
               </div>

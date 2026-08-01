@@ -325,7 +325,7 @@
     const sessionId = params.get('session_id');
 
     if (!sessionId) {
-      window.location.href = '/founders-beta/participate.html';
+      window.location.href = '/founders-beta/participate';
     }
 
     // Load founder data
@@ -333,7 +333,7 @@
       .then(res => res.json())
       .then(data => {
         if (!data.verified) {
-          window.location.href = '/founders-beta/participate.html';
+          window.location.href = '/founders-beta/participate';
           return;
         }
 
@@ -357,7 +357,7 @@
       })
       .catch(err => {
         alert('Error loading your information. Please try again.');
-        window.location.href = '/founders-beta/participate.html';
+        window.location.href = '/founders-beta/participate';
       });
 
     // Handle form submission
