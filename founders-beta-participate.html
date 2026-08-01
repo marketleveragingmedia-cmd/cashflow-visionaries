@@ -449,7 +449,7 @@
     /* CLOSING */
     .closing{
       background:linear-gradient(135deg, var(--forest) 0%, var(--green-dark) 100%);
-      padding:68px 0 72px;
+      padding:68px 0 56px;
       text-align:center;
       position:relative;
     }
@@ -474,6 +474,25 @@
     }
     .closing-tagline span{
       font-size:.5rem;
+    }
+
+    /* FOOTER */
+    footer{
+      padding:24px 0;
+      background:#062B1B;
+      color:rgba(255,255,255,.65);
+      font-size:.72rem;
+    }
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+    .footer-row span:last-child{
+      color:var(--gold-light);
+      font-weight:600;
+      letter-spacing:.06em;
     }
 
     /* RESPONSIVE */
@@ -529,6 +548,11 @@
       }
       .closing-tagline{
         font-size:.75rem;
+      }
+      .footer-row{
+        flex-direction:column;
+        text-align:center;
+        gap:8px;
       }
     }
   </style>
@@ -656,6 +680,14 @@
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 Cash Flow Visionaries | Network Leveraging Cash Flow</span>
+      <span>Connect. Activate. Duplicate.</span>
+    </div>
+  </footer>
 
   <script>
     // STRIPE PAYMENT LINK CONFIGURATION
