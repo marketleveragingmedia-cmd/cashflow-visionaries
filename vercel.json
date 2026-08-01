@@ -1,28 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/founders-beta/participate",
-      "destination": "/founder.html",
-      "permanent": false
-    },
-    {
-      "source": "/founders-beta/participate.html",
-      "destination": "/founder.html",
-      "permanent": false
-    },
-    {
       "source": "/participate",
-      "destination": "/founder.html",
-      "permanent": false
-    },
-    {
-      "source": "/participate.html",
-      "destination": "/founder.html",
-      "permanent": false
-    },
-    {
-      "source": "/founder",
-      "destination": "/founder.html",
+      "destination": "/participate.html",
       "permanent": false
     },
     {
