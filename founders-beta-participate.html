@@ -331,8 +331,8 @@
     .founder-card-cta{
       width:100%;
       padding:16px 28px;
-      background:linear-gradient(135deg, var(--gold-rich) 0%, #B8954F 100%);
-      color:var(--white);
+      background:linear-gradient(135deg, var(--gold-rich) 0%, #B8954F 100%) !important;
+      color:var(--white) !important;
       border:none;
       border-radius:10px;
       font-size:.88rem;
@@ -361,8 +361,8 @@
       width:300px;
       height:300px;
     }
-    .founder-card-cta:hover{
-      background:linear-gradient(135deg, #B8954F 0%, var(--gold-rich) 100%);
+    .founder-card-cta:not(:disabled):hover{
+      background:linear-gradient(135deg, #B8954F 0%, var(--gold-rich) 100%) !important;
       box-shadow:0 10px 32px rgba(201,169,97,.35);
       transform:translateY(-2px);
     }
@@ -370,10 +370,11 @@
       transform:translateY(0);
     }
     .founder-card-cta:disabled{
-      background:#999;
+      background:linear-gradient(135deg, #999 0%, #888 100%) !important;
       cursor:not-allowed;
-      opacity:0.6;
-      box-shadow:none;
+      opacity:0.5;
+      box-shadow:0 2px 8px rgba(0,0,0,.1);
+      filter:grayscale(1);
     }
     .founder-card-cta:disabled:before{
       display:none;
