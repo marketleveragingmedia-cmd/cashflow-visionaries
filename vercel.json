@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/founder",
-      "destination": "/founder.html",
+      "source": "/founders-beta",
+      "destination": "/founders-beta.html",
       "permanent": false
     },
     {
