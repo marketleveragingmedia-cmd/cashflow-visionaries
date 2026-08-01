@@ -232,7 +232,7 @@
     const demoMode = params.get('demo') === 'true';
 
     if (!sessionId && !demoMode) {
-      window.location.href = '/founders-beta/participate';
+      window.location.href = '/participate';
     }
 
     // Demo mode - skip API verification
@@ -253,7 +253,7 @@
       .then(res => res.json())
       .then(data => {
         if (!data.verified || data.paymentStatus !== 'paid') {
-          window.location.href = '/founders-beta/participate';
+          window.location.href = '/participate';
           return;
         }
         displayConfirmation(data, sessionId);
@@ -299,7 +299,7 @@
                 Orientation.
               </p>
               <div class="cta-wrapper">
-                <a href="/founders-beta/intake?session_id=${sessionId}" class="cta-btn">
+                <a href="/intake?session_id=${sessionId}" class="cta-btn">
                   Complete Your Founder Intake
                 </a>
               </div>

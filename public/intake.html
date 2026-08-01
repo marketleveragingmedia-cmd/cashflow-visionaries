@@ -326,7 +326,7 @@
     const demoMode = params.get('demo') === 'true';
 
     if (!sessionId && !demoMode) {
-      window.location.href = '/founders-beta/participate';
+      window.location.href = '/participate';
     }
 
     // Demo mode - use mock data
@@ -348,14 +348,14 @@
       .then(res => res.json())
       .then(data => {
         if (!data.verified) {
-          window.location.href = '/founders-beta/participate';
+          window.location.href = '/participate';
           return;
         }
         loadFormData(data, sessionId);
       })
       .catch(err => {
         alert('Error loading your information. Please try again.');
-        window.location.href = '/founders-beta/participate';
+        window.location.href = '/participate';
       });
 
     function loadFormData(data, sessionId) {
