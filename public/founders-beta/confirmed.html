@@ -229,9 +229,23 @@
     // Get session_id from URL
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');
+    const demoMode = params.get('demo') === 'true';
 
-    if (!sessionId) {
+    if (!sessionId && !demoMode) {
       window.location.href = '/founders-beta/participate';
+    }
+
+    // Demo mode - skip API verification
+    if (demoMode) {
+      const demoData = {
+        verified: true,
+        paymentStatus: 'paid',
+        founderLevel: 'Citizen Founder-Beta',
+        fullName: 'Demo User',
+        email: 'demo@example.com'
+      };
+      displayConfirmation(demoData, 'demo-session-123');
+      return;
     }
 
     // Verify payment with backend API
@@ -242,6 +256,20 @@
           window.location.href = '/founders-beta/participate';
           return;
         }
+        displayConfirmation(data, sessionId);
+      })
+      .catch(err => {
+        document.getElementById('content').innerHTML = `
+          <div class="container">
+            <div class="error">
+              <h2>Verification Error</h2>
+              <p>We couldn't verify your payment. Please contact support or try again.</p>
+            </div>
+          </div>
+        `;
+      });
+
+    function displayConfirmation(data, sessionId) {
 
         // Display confirmation page
         document.getElementById('content').innerHTML = `
@@ -284,17 +312,7 @@
             </div>
           </section>
         `;
-      })
-      .catch(err => {
-        document.getElementById('content').innerHTML = `
-          <div class="container">
-            <div class="error">
-              <h2>Verification Error</h2>
-              <p>We couldn't verify your payment. Please contact support or try again.</p>
-            </div>
-          </div>
-        `;
-      });
+    }
   </script>
 </body>
 </html>
