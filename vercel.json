@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/participate",
+      "destination": "/participate.html",
+      "permanent": false
+    },
+    {
+      "source": "/confirmed",
+      "destination": "/confirmed.html",
+      "permanent": false
+    },
+    {
+      "source": "/intake",
+      "destination": "/intake.html",
+      "permanent": false
+    }
+  ]
+}
