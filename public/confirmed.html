@@ -226,16 +226,48 @@
   </div>
 
   <script>
+    // Function to display confirmation page
+    function displayConfirmation(data, sessionId) {
+      document.getElementById('content').innerHTML = `
+        <section class="hero">
+          <div class="container">
+            <div class="hero-eyebrow">Network Leveraging Cash Flow</div>
+            <h1>WELCOME, FOUNDING VISIONARY</h1>
+            <p class="hero-subtitle">
+              Your Founder-Beta Participation Is Confirmed.
+            </p>
+            <div class="hero-level">${data.founderLevel}</div>
+          </div>
+        </section>
+
+        <section style="padding:64px 0;background:var(--white);">
+          <div class="container">
+            <div style="max-width:680px;margin:0 auto;text-align:center;">
+              <h2 style="font-size:2rem;margin-bottom:24px;color:var(--forest);">Your Next Step</h2>
+              <p style="font-size:1.12rem;color:var(--muted);margin-bottom:32px;line-height:1.75;">
+                Complete your Founder Intake to activate your full Founder-Beta experience, 
+                access your resources, and begin your orientation.
+              </p>
+              <a href="/intake?session_id=${sessionId}" class="cta-btn" style="display:inline-block;padding:16px 48px;background:linear-gradient(135deg,var(--forest),var(--green-dark));color:var(--white);border-radius:12px;font-weight:700;text-decoration:none;box-shadow:var(--shadow);">
+                Complete Your Founder Intake
+              </a>
+            </div>
+          </div>
+        </section>
+      `;
+    }
+
     // Get session_id from URL
     const params = new URLSearchParams(window.location.search);
     const sessionId = params.get('session_id');
     const demoMode = params.get('demo') === 'true';
 
+    // Redirect if no session
     if (!sessionId && !demoMode) {
-      window.location.href = '/participate';
+      window.location.href = '/founders-beta';
     }
 
-    // Demo mode - skip API verification
+    // Demo mode
     if (demoMode) {
       const demoData = {
         verified: true,
@@ -245,82 +277,36 @@
         email: 'demo@example.com'
       };
       displayConfirmation(demoData, 'demo-session-123');
-      return;
-    }
-
-    // Verify payment with backend API
-    console.log('Verifying session:', sessionId);
-    fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
-      .then(res => {
-        console.log('Response status:', res.status);
-        return res.json();
-      })
-      .then(data => {
-        console.log('Verification data:', data);
-        if (!data.verified || data.paymentStatus !== 'paid') {
-          console.error('Verification failed:', data);
-          alert('Verification failed: ' + (data.error || 'Unknown error'));
-          window.location.href = '/founders-beta';
-          return;
-        }
-        console.log('Calling displayConfirmation');
-        displayConfirmation(data, sessionId);
-      })
-      .catch(err => {
-        console.error('Fetch error:', err);
-        document.getElementById('content').innerHTML = `
-          <div class="container">
-            <div class="error">
-              <h2>Verification Error</h2>
-              <p>We couldn't verify your payment. Please contact support or try again.</p>
-            </div>
-          </div>
-        `;
-      });
-
-    function displayConfirmation(data, sessionId) {
-
-        // Display confirmation page
-        document.getElementById('content').innerHTML = `
-          <section class="hero">
+    } else {
+      // Verify payment with backend API
+      console.log('Verifying session:', sessionId);
+      fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
+        .then(res => {
+          console.log('Response status:', res.status);
+          return res.json();
+        })
+        .then(data => {
+          console.log('Verification data:', data);
+          if (!data.verified || data.paymentStatus !== 'paid') {
+            console.error('Verification failed:', data);
+            alert('Verification failed: ' + (data.error || 'Unknown error'));
+            window.location.href = '/founders-beta';
+            return;
+          }
+          console.log('Calling displayConfirmation');
+          displayConfirmation(data, sessionId);
+        })
+        .catch(err => {
+          console.error('Fetch error:', err);
+          document.getElementById('content').innerHTML = `
             <div class="container">
-              <div class="hero-eyebrow">Network Leveraging Cash Flow</div>
-              <h1>WELCOME, FOUNDING VISIONARY</h1>
-              <p class="hero-subtitle">
-                Your Founder-Beta Participation Is Confirmed.
-              </p>
-              <p class="hero-subtitle">
-                You have officially taken the next step in helping Establish the
-                Foundation of the Cash Flow Visionaries Movement.
-              </p>
-              <div class="hero-level">
-                <div class="hero-level-label">Your Founder-Beta Level</div>
-                <div class="hero-level-value">${data.founderLevel}</div>
+              <div class="error">
+                <h2>Verification Error</h2>
+                <p>We couldn't verify your payment. Please contact support or try again.</p>
               </div>
             </div>
-          </section>
-
-          <section class="content">
-            <div class="container">
-              <h2>Next Step</h2>
-              <p>
-                Your next step is to complete your Founder Intake and begin Founder
-                Orientation.
-              </p>
-              <div class="cta-wrapper">
-                <a href="/intake?session_id=${sessionId}" class="cta-btn">
-                  Complete Your Founder Intake
-                </a>
-              </div>
-            </div>
-          </section>
-
-          <section class="closing">
-            <div class="container">
-              <p>Connecting One Cash Flow Visionary at a Time.</p>
-            </div>
-          </section>
-        `;
+          `;
+        });
     }
   </script>
 </body>
