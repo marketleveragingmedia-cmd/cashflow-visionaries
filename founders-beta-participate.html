@@ -11,14 +11,13 @@
   <style>
     :root{
       --green:#1E8E5A;
-      --green-medium:#2A9F68;
       --green-dark:#0A5D39;
       --green-deep:#063B25;
-      --gold:#B8995C;
-      --gold-muted:#C9A76F;
+      --gold:#C9A441;
+      --gold-light:#E6CF87;
       --white:#FFFFFF;
-      --ivory:#FFFEF9;
       --soft:#F6FAF7;
+      --ivory:#FFFEF9;
       --ink:#18362A;
       --muted:#5B6E64;
       --line:#DCECE2;
@@ -45,29 +44,12 @@
     .header{
       background:var(--white);
       border-bottom:1px solid var(--line);
-      padding:24px 0;
+      padding:20px 0;
     }
-    .brand-line{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      color:var(--ink);
-      font-size:.72rem;
-      font-weight:800;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-    }
-    .brand-mark{
-      display:grid;
-      place-items:center;
-      width:36px;
-      height:36px;
-      border:2px solid var(--green-medium);
-      border-radius:50%;
-      color:var(--green-medium);
-      font-family:"Playfair Display",Georgia,serif;
-      font-size:1.35rem;
-      font-weight:600;
+    .brand-logo{
+      display:block;
+      height:68px;
+      width:auto;
     }
 
     /* HERO SECTION */
@@ -134,7 +116,7 @@
       position:relative;
     }
     .founder-card:hover{
-      border-color:var(--green-medium);
+      border-color:var(--green);
       box-shadow:var(--shadow);
       transform:translateY(-4px);
     }
@@ -188,14 +170,14 @@
       content:"✓";
       position:absolute;
       left:0;
-      color:var(--green-medium);
+      color:var(--green);
       font-weight:800;
       font-size:1.1rem;
     }
     .founder-card-cta{
       width:100%;
       padding:16px 24px;
-      background:var(--green-medium);
+      background:var(--green);
       color:var(--white);
       border:none;
       border-radius:10px;
@@ -248,7 +230,7 @@
       letter-spacing:.01em;
     }
     .disclosure-toggle{
-      color:var(--green-medium);
+      color:var(--green);
       font-size:1.4rem;
       font-weight:700;
       transition:transform .3s ease;
@@ -278,7 +260,7 @@
       max-width:920px;
       margin:40px auto 0;
       background:#FFF9F0;
-      border:2px solid var(--gold-muted);
+      border:2px solid var(--gold);
       border-radius:14px;
       padding:32px 36px;
     }
@@ -293,7 +275,7 @@
       height:22px;
       margin-top:3px;
       cursor:pointer;
-      accent-color:var(--green-medium);
+      accent-color:var(--green);
       flex-shrink:0;
     }
     .acknowledgment-text{
@@ -361,9 +343,8 @@
   <!-- HEADER -->
   <header class="header">
     <div class="container">
-      <a href="/" class="brand-line">
-        <div class="brand-mark">C</div>
-        <span>Cash Flow Visionaries</span>
+      <a href="/">
+        <img src="assets/cash-flow-visionaries-logo.jpg" alt="Cash Flow Visionaries - The Movement" class="brand-logo">
       </a>
     </div>
   </header>
