@@ -134,52 +134,57 @@
     }
     .hero-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-      max-width:1000px;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      max-width:900px;
       margin:0 auto;
       opacity:0;
       animation:fadeInUp .8s ease-out .4s forwards;
     }
     .hero-box{
-      background:rgba(255,255,255,.96);
-      border:1.5px solid var(--gold-rich);
-      border-radius:12px;
-      padding:32px 24px;
-      text-align:center;
+      background:rgba(255,255,255,.97);
+      border:1px solid rgba(201,169,97,.4);
+      border-radius:10px;
+      padding:24px 28px;
+      display:flex;
+      align-items:center;
+      gap:20px;
       transition:all .3s ease;
-      box-shadow:0 4px 16px rgba(0,0,0,.08);
+      box-shadow:0 3px 12px rgba(0,0,0,.06);
     }
     .hero-box:hover{
-      transform:translateY(-4px);
-      box-shadow:0 8px 28px rgba(201,169,97,.2);
-      border-color:var(--gold-light);
+      transform:translateY(-3px);
+      box-shadow:0 6px 20px rgba(201,169,97,.15);
+      border-color:var(--gold-rich);
     }
     .hero-box-icon{
-      width:48px;
-      height:48px;
-      margin:0 auto 18px;
+      width:40px;
+      height:40px;
+      flex-shrink:0;
       display:flex;
       align-items:center;
       justify-content:center;
       background:linear-gradient(135deg, var(--forest), var(--green));
       border-radius:50%;
       color:var(--gold-light);
-      font-size:1.3rem;
-      font-weight:300;
+      font-size:1.1rem;
+    }
+    .hero-box-content{
+      flex:1;
+      text-align:left;
     }
     .hero-box-title{
-      color:var(--forest);
-      font-size:.75rem;
+      color:var(--gold-rich);
+      font-size:.7rem;
       font-weight:800;
-      letter-spacing:.12em;
+      letter-spacing:.10em;
       text-transform:uppercase;
-      margin-bottom:12px;
+      margin-bottom:6px;
     }
     .hero-box-text{
       color:var(--ink);
-      font-size:.92rem;
-      line-height:1.6;
+      font-size:.9rem;
+      line-height:1.5;
       font-weight:500;
     }
     @keyframes fadeInUp{
@@ -545,19 +550,20 @@
         font-size:clamp(1.75rem,7vw,2.4rem);
       }
       .hero-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:16px;
+        grid-template-columns:1fr;
+        gap:14px;
       }
       .hero-box{
-        padding:28px 20px;
+        padding:20px 22px;
+        gap:16px;
       }
       .hero-box-icon{
-        width:42px;
-        height:42px;
-        font-size:1.1rem;
+        width:36px;
+        height:36px;
+        font-size:1rem;
       }
       .hero-box-text{
-        font-size:.88rem;
+        font-size:.86rem;
       }
       .choose{
         padding:56px 0 64px;
@@ -618,45 +624,57 @@
         <div class="hero-grid">
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
             </div>
-            <div class="hero-box-title">Vision</div>
-            <div class="hero-box-text">You Understand the Vision.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Vision</div>
+              <div class="hero-box-text">You Understand the Vision.</div>
+            </div>
           </div>
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             </div>
-            <div class="hero-box-title">Mission</div>
-            <div class="hero-box-text">You Believe in the Mission.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Mission</div>
+              <div class="hero-box-text">You Believe in the Mission.</div>
+            </div>
           </div>
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
             </div>
-            <div class="hero-box-title">Purpose</div>
-            <div class="hero-box-text">You Support the Purpose.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Purpose</div>
+              <div class="hero-box-text">You Support the Purpose.</div>
+            </div>
           </div>
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
             </div>
-            <div class="hero-box-title">Participate</div>
-            <div class="hero-box-text">You are willing to Participate.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Participate</div>
+              <div class="hero-box-text">You are willing to Participate.</div>
+            </div>
           </div>
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
             </div>
-            <div class="hero-box-title">Support</div>
-            <div class="hero-box-text">You are willing to Support.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Support</div>
+              <div class="hero-box-text">You are willing to Support.</div>
+            </div>
           </div>
           <div class="hero-box">
             <div class="hero-box-icon">
-              <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18 12v6h-3v-5H9v5H6v-6l6-6.16z"/></svg>
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.84L18 12v6h-3v-5H9v5H6v-6l6-6.16z"/></svg>
             </div>
-            <div class="hero-box-title">Foundation</div>
-            <div class="hero-box-text">You are willing to help Establish the Foundation of the Movement.</div>
+            <div class="hero-box-content">
+              <div class="hero-box-title">Foundation</div>
+              <div class="hero-box-text">You are willing to help Establish the Foundation of the Movement.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -687,7 +705,7 @@
             <li>Expanded Founder Resources and Support</li>
             <li>Future Annual Premium Membership Renewals Waived</li>
           </ul>
-          <button class="founder-card-cta" id="citizen-cta" disabled>
+          <button class="founder-card-cta" id="citizen-cta" disabled style="background: linear-gradient(135deg, #C9A961, #B8954F) !important; color: #FFFFFF !important; border: none !important;">
             Become a Citizen Founder-Beta
           </button>
         </div>
@@ -709,7 +727,7 @@
             <li>Expanded Founder Resources and Support</li>
             <li>Future Annual Premium Membership Renewals Waived</li>
           </ul>
-          <button class="founder-card-cta" id="enterprise-cta" disabled>
+          <button class="founder-card-cta" id="enterprise-cta" disabled style="background: linear-gradient(135deg, #C9A961, #B8954F) !important; color: #FFFFFF !important; border: none !important;">
             Become an Enterprise Founder-Beta
           </button>
         </div>
