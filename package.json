@@ -1,21 +1,21 @@
 {
-  "name": "cashflow-visionaries-lead-page",
-  "version": "2.0.0",
-  "description": "Landing page for Cash Flow Visionaries - Network Leveraging Cash Flow movement",
-  "main": "index.html",
+  "name": "cashflow-visionaries",
+  "version": "3.0.0",
+  "description": "Cash Flow Visionaries - Founders Beta System",
   "scripts": {
-    "dev": "python3 -m http.server 8000",
-    "serve": "npx serve .",
-    "deploy": "vercel --prod"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "keywords": [
-    "cash-flow",
-    "network-marketing",
-    "community",
-    "visionaries",
-    "landing-page"
-  ],
-  "author": "MzSamantha - Network Leveraging Cash Flow",
-  "license": "UNLICENSED",
-  "private": true
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@prisma/client": "^5.14.0",
+    "stripe": "^15.8.0",
+    "micro": "^10.0.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.14.0"
+  }
 }
