@@ -1,4 +1,0 @@
-{
-  "framework": "nextjs",
-  "buildCommand": "npm run build 2>&1 | tee build.log"
-}
