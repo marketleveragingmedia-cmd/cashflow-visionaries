@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cash Flow Visionaries | Founders Beta Participation" />
+  <title>Founders Beta Participation | Cash Flow Visionaries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#1E8E5A;
+      --green-medium:#2A9F68;
+      --green-dark:#0A5D39;
+      --green-deep:#063B25;
+      --gold:#B8995C;
+      --gold-muted:#C9A76F;
+      --white:#FFFFFF;
+      --ivory:#FFFEF9;
+      --soft:#F6FAF7;
+      --ink:#18362A;
+      --muted:#5B6E64;
+      --line:#DCECE2;
+      --radius:16px;
+      --shadow:0 6px 24px rgba(6,59,37,.08);
+      --shadow-card:0 4px 16px rgba(6,59,37,.06);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--ivory);
+      color:var(--ink);
+      font-family:"Montserrat",Arial,sans-serif;
+      font-size:16px;
+      line-height:1.62;
+      padding:0;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 40px));margin:0 auto}
+    .section{padding:80px 0}
+
+    /* HEADER */
+    .header{
+      background:var(--white);
+      border-bottom:1px solid var(--line);
+      padding:24px 0;
+    }
+    .brand-line{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--ink);
+      font-size:.72rem;
+      font-weight:800;
+      letter-spacing:.10em;
+      text-transform:uppercase;
+    }
+    .brand-mark{
+      display:grid;
+      place-items:center;
+      width:36px;
+      height:36px;
+      border:2px solid var(--green-medium);
+      border-radius:50%;
+      color:var(--green-medium);
+      font-family:"Playfair Display",Georgia,serif;
+      font-size:1.35rem;
+      font-weight:600;
+    }
+
+    /* HERO SECTION */
+    .hero{
+      background:var(--white);
+      padding:72px 0 64px;
+    }
+    .hero-content{
+      text-align:center;
+      max-width:880px;
+      margin:0 auto;
+    }
+    .hero h1{
+      margin:0 0 28px;
+      color:var(--green-deep);
+      font-size:clamp(2.4rem,4.2vw,3.6rem);
+      font-weight:700;
+      line-height:1.15;
+      letter-spacing:-.025em;
+    }
+    .hero-copy{
+      max-width:700px;
+      margin:0 auto 0;
+      color:var(--muted);
+      font-size:1.05rem;
+      line-height:1.75;
+    }
+    .hero-copy p{
+      margin:0 0 8px;
+    }
+    .hero-copy p:last-child{
+      margin-bottom:0;
+    }
+
+    /* CHOOSE SECTION */
+    .choose{
+      background:var(--ivory);
+      padding:68px 0 80px;
+    }
+    .choose h2{
+      text-align:center;
+      margin:0 0 52px;
+      color:var(--green-deep);
+      font-size:clamp(1.65rem,2.8vw,2.2rem);
+      font-weight:700;
+      letter-spacing:-.02em;
+    }
+
+    /* FOUNDER OPTIONS GRID */
+    .founder-options{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:32px;
+      max-width:1000px;
+      margin:0 auto;
+    }
+    .founder-card{
+      background:var(--white);
+      border:2px solid var(--line);
+      border-radius:18px;
+      padding:40px 36px 44px;
+      box-shadow:var(--shadow-card);
+      transition:all .3s ease;
+      position:relative;
+    }
+    .founder-card:hover{
+      border-color:var(--green-medium);
+      box-shadow:var(--shadow);
+      transform:translateY(-4px);
+    }
+    .founder-card-header{
+      text-align:center;
+      margin-bottom:32px;
+      padding-bottom:28px;
+      border-bottom:2px solid var(--line);
+    }
+    .founder-card-title{
+      color:var(--green-deep);
+      font-size:1.35rem;
+      font-weight:800;
+      letter-spacing:.02em;
+      margin-bottom:14px;
+      text-transform:uppercase;
+    }
+    .founder-card-price{
+      color:var(--gold);
+      font-size:2.5rem;
+      font-weight:800;
+      letter-spacing:-.02em;
+      margin-bottom:6px;
+    }
+    .founder-card-term{
+      color:var(--muted);
+      font-size:.88rem;
+      font-weight:600;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .founder-card-benefits{
+      list-style:none;
+      margin:0 0 36px;
+      padding:0;
+    }
+    .founder-card-benefits li{
+      padding:13px 0;
+      color:var(--ink);
+      font-size:.93rem;
+      font-weight:500;
+      line-height:1.5;
+      border-bottom:1px solid var(--line);
+      position:relative;
+      padding-left:28px;
+    }
+    .founder-card-benefits li:last-child{
+      border-bottom:none;
+    }
+    .founder-card-benefits li:before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--green-medium);
+      font-weight:800;
+      font-size:1.1rem;
+    }
+    .founder-card-cta{
+      width:100%;
+      padding:16px 24px;
+      background:var(--green-medium);
+      color:var(--white);
+      border:none;
+      border-radius:10px;
+      font-size:.92rem;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      cursor:pointer;
+      transition:all .25s ease;
+      box-shadow:0 4px 12px rgba(30,142,90,.18);
+    }
+    .founder-card-cta:hover{
+      background:var(--green-dark);
+      box-shadow:0 6px 18px rgba(30,142,90,.26);
+      transform:translateY(-2px);
+    }
+    .founder-card-cta:disabled{
+      background:#999;
+      cursor:not-allowed;
+      opacity:0.6;
+    }
+
+    /* DISCLOSURE SECTION */
+    .disclosure-section{
+      max-width:920px;
+      margin:56px auto 0;
+      background:var(--white);
+      border:2px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      box-shadow:var(--shadow-card);
+    }
+    .disclosure-header{
+      background:var(--soft);
+      padding:20px 28px;
+      border-bottom:2px solid var(--line);
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      transition:background .2s ease;
+    }
+    .disclosure-header:hover{
+      background:#EDF5F0;
+    }
+    .disclosure-title{
+      color:var(--green-deep);
+      font-size:1.08rem;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    .disclosure-toggle{
+      color:var(--green-medium);
+      font-size:1.4rem;
+      font-weight:700;
+      transition:transform .3s ease;
+    }
+    .disclosure-toggle.open{
+      transform:rotate(180deg);
+    }
+    .disclosure-body{
+      padding:32px 28px;
+      color:var(--muted);
+      font-size:.91rem;
+      line-height:1.72;
+      display:none;
+    }
+    .disclosure-body.open{
+      display:block;
+    }
+    .disclosure-body p{
+      margin:0 0 18px;
+    }
+    .disclosure-body p:last-child{
+      margin-bottom:0;
+    }
+
+    /* ACKNOWLEDGMENT SECTION */
+    .acknowledgment-section{
+      max-width:920px;
+      margin:40px auto 0;
+      background:#FFF9F0;
+      border:2px solid var(--gold-muted);
+      border-radius:14px;
+      padding:32px 36px;
+    }
+    .acknowledgment-checkbox{
+      display:flex;
+      align-items:flex-start;
+      gap:16px;
+      cursor:pointer;
+    }
+    .acknowledgment-checkbox input[type="checkbox"]{
+      width:22px;
+      height:22px;
+      margin-top:3px;
+      cursor:pointer;
+      accent-color:var(--green-medium);
+      flex-shrink:0;
+    }
+    .acknowledgment-text{
+      color:var(--ink);
+      font-size:.92rem;
+      line-height:1.68;
+      font-weight:500;
+    }
+
+    /* CLOSING */
+    .closing{
+      background:var(--white);
+      padding:64px 0 72px;
+      text-align:center;
+    }
+    .closing h3{
+      color:var(--green-deep);
+      font-size:1.45rem;
+      font-weight:700;
+      margin-bottom:12px;
+      letter-spacing:-.01em;
+    }
+    .closing p{
+      color:var(--muted);
+      font-size:1.02rem;
+      font-weight:500;
+      letter-spacing:.02em;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .founder-options{
+        grid-template-columns:1fr;
+        gap:28px;
+      }
+      .section{
+        padding:48px 0;
+      }
+      .hero{
+        padding:48px 0 40px;
+      }
+      .choose{
+        padding:48px 0 56px;
+      }
+      .closing{
+        padding:48px 0 56px;
+      }
+      .hero h1{
+        margin-bottom:20px;
+      }
+      .hero-copy{
+        font-size:1rem;
+      }
+      .founder-card{
+        padding:32px 28px 36px;
+      }
+      .founder-card-price{
+        font-size:2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <a href="/" class="brand-line">
+        <div class="brand-mark">C</div>
+        <span>Cash Flow Visionaries</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>The Founder-Beta Invitation</h1>
+        <div class="hero-copy">
+          <p>You Understand the Vision.</p>
+          <p>You Believe in the Mission.</p>
+          <p>You Support the Purpose.</p>
+          <p>You are willing to Participate.</p>
+          <p>You are willing to Support.</p>
+          <p>You are willing to help Establish the Foundation of the Movement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE SECTION -->
+  <section class="choose">
+    <div class="container">
+      <h2>Choose How You Are Willing to Participate.</h2>
+
+      <!-- FOUNDER OPTIONS -->
+      <div class="founder-options">
+        
+        <!-- CITIZEN FOUNDER-BETA -->
+        <div class="founder-card">
+          <div class="founder-card-header">
+            <h3 class="founder-card-title">Citizen Founder-Beta</h3>
+            <div class="founder-card-price">$1,497</div>
+            <div class="founder-card-term">One Time</div>
+          </div>
+          <ul class="founder-card-benefits">
+            <li>Founder-Beta Positioning</li>
+            <li>Founder Orientation and Private Education</li>
+            <li>Applicable Onboarding and Wallet Activation</li>
+            <li>Applicable Blockchain-Fee Coverage</li>
+            <li>CAS Team Admin — Lifetime Access</li>
+            <li>Expanded Founder Resources and Support</li>
+            <li>Future Annual Premium Membership Renewals Waived</li>
+          </ul>
+          <button class="founder-card-cta" id="citizen-cta" disabled>
+            Become a Citizen Founder-Beta
+          </button>
+        </div>
+
+        <!-- ENTERPRISE FOUNDER-BETA -->
+        <div class="founder-card">
+          <div class="founder-card-header">
+            <h3 class="founder-card-title">Enterprise Founder-Beta</h3>
+            <div class="founder-card-price">$1,997</div>
+            <div class="founder-card-term">One Time</div>
+          </div>
+          <ul class="founder-card-benefits">
+            <li>Founder-Beta Positioning</li>
+            <li>Founder Orientation and Private Education</li>
+            <li>Applicable Onboarding and Wallet Activation</li>
+            <li>Applicable Blockchain-Fee Coverage</li>
+            <li>Enterprise Ecosystem Access</li>
+            <li>CAS Main Admin — Lifetime Access</li>
+            <li>Expanded Founder Resources and Support</li>
+            <li>Future Annual Premium Membership Renewals Waived</li>
+          </ul>
+          <button class="founder-card-cta" id="enterprise-cta" disabled>
+            Become an Enterprise Founder-Beta
+          </button>
+        </div>
+
+      </div>
+
+      <!-- DISCLOSURE SECTION -->
+      <div class="disclosure-section">
+        <div class="disclosure-header" id="disclosure-header">
+          <h4 class="disclosure-title">Founder-Beta Investment Disclosure</h4>
+          <span class="disclosure-toggle" id="disclosure-toggle">▼</span>
+        </div>
+        <div class="disclosure-body" id="disclosure-body">
+          <p>The term "Founder-Beta Investment" refers to the one-time payment made to participate in the Cash Flow Visionaries | Network Leveraging Cash Flow Founder-Beta experience and receive the applicable Founder-Beta benefits, education, resources, support and access described in this offer.</p>
+          
+          <p>The term "Investment" is used in the ordinary sense of committing financial resources toward participation in the Founder-Beta experience. Founder-Beta participation does not represent the purchase of stock, equity, securities, voting rights or ownership in Cash Flow Visionaries, Network Leveraging Cash Flow or any related entity.</p>
+          
+          <p>Founder-Beta participation does not guarantee income, earnings, financial returns or business results.</p>
+          
+          <p>Cash Flow Visionaries and Network Leveraging Cash Flow provide education, information, resources, community support and participation tools. Nothing presented through the Founder-Beta experience, presentation, education, resources or related communications constitutes financial, investment, legal or tax advice.</p>
+        </div>
+      </div>
+
+      <!-- ACKNOWLEDGMENT SECTION -->
+      <div class="acknowledgment-section">
+        <label class="acknowledgment-checkbox">
+          <input type="checkbox" id="acknowledgment-checkbox">
+          <span class="acknowledgment-text">
+            I acknowledge that I am making a one-time payment to participate in the Founder-Beta experience and receive the applicable Founder-Beta benefits and resources. I understand that Founder-Beta participation does not represent equity, securities or ownership and does not guarantee income, earnings, financial returns or business results. I also understand that the information and education provided are not financial, investment, legal or tax advice.
+          </span>
+        </label>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="container">
+      <h3>One Founder Investment.<br>Lifetime Founder Advantages.</h3>
+      <p>Connecting One Cash Flow Visionary at a Time.</p>
+    </div>
+  </section>
+
+  <script>
+    // STRIPE PAYMENT LINK CONFIGURATION
+    const STRIPE_LINKS = {
+      citizen: '', // Add Stripe Payment Link here when ready
+      enterprise: '' // Add Stripe Payment Link here when ready
+    };
+
+    // DISCLOSURE TOGGLE
+    const disclosureHeader = document.getElementById('disclosure-header');
+    const disclosureBody = document.getElementById('disclosure-body');
+    const disclosureToggle = document.getElementById('disclosure-toggle');
+
+    disclosureHeader.addEventListener('click', () => {
+      disclosureBody.classList.toggle('open');
+      disclosureToggle.classList.toggle('open');
+    });
+
+    // ACKNOWLEDGMENT CHECKBOX CONTROL
+    const acknowledgmentCheckbox = document.getElementById('acknowledgment-checkbox');
+    const citizenCTA = document.getElementById('citizen-cta');
+    const enterpriseCTA = document.getElementById('enterprise-cta');
+
+    acknowledgmentCheckbox.addEventListener('change', () => {
+      const isChecked = acknowledgmentCheckbox.checked;
+      citizenCTA.disabled = !isChecked;
+      enterpriseCTA.disabled = !isChecked;
+    });
+
+    // CTA BUTTON HANDLERS
+    citizenCTA.addEventListener('click', () => {
+      if (!STRIPE_LINKS.citizen) {
+        alert('Stripe Payment Link not yet configured. Please contact support.');
+        return;
+      }
+      window.location.href = STRIPE_LINKS.citizen;
+    });
+
+    enterpriseCTA.addEventListener('click', () => {
+      if (!STRIPE_LINKS.enterprise) {
+        alert('Stripe Payment Link not yet configured. Please contact support.');
+        return;
+      }
+      window.location.href = STRIPE_LINKS.enterprise;
+    });
+  </script>
+
+</body>
+</html>
