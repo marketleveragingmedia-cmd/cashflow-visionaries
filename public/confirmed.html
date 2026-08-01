@@ -249,16 +249,25 @@
     }
 
     // Verify payment with backend API
+    console.log('Verifying session:', sessionId);
     fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
-      .then(res => res.json())
+      .then(res => {
+        console.log('Response status:', res.status);
+        return res.json();
+      })
       .then(data => {
+        console.log('Verification data:', data);
         if (!data.verified || data.paymentStatus !== 'paid') {
-          window.location.href = '/participate';
+          console.error('Verification failed:', data);
+          alert('Verification failed: ' + (data.error || 'Unknown error'));
+          window.location.href = '/founders-beta';
           return;
         }
+        console.log('Calling displayConfirmation');
         displayConfirmation(data, sessionId);
       })
       .catch(err => {
+        console.error('Fetch error:', err);
         document.getElementById('content').innerHTML = `
           <div class="container">
             <div class="error">
