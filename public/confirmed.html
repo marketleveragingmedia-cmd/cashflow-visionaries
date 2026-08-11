@@ -280,7 +280,7 @@
     } else {
       // Verify payment with backend API
       console.log('Verifying session:', sessionId);
-      fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
+      fetch(`https://hub.citizenactivation.com/api/founders-beta/verify?session_id=${sessionId}`)
         .then(res => {
           console.log('Response status:', res.status);
           return res.json();
