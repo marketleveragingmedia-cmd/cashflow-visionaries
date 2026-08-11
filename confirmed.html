@@ -249,7 +249,7 @@
     }
 
     // Verify payment with backend API
-    fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
+    fetch(`https://hub.citizenactivation.com/api/founders-beta/verify?session_id=${sessionId}`)
       .then(res => res.json())
       .then(data => {
         if (!data.verified || data.paymentStatus !== 'paid') {

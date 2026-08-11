@@ -344,7 +344,7 @@
     }
 
     // Load founder data
-    fetch(`https://cfv-content-engine.vercel.app/api/founders-beta/verify?session_id=${sessionId}`)
+    fetch(`https://hub.citizenactivation.com/api/founders-beta/verify?session_id=${sessionId}`)
       .then(res => res.json())
       .then(data => {
         if (!data.verified) {
@@ -413,7 +413,7 @@
           return;
         }
 
-        const response = await fetch('https://cfv-content-engine.vercel.app/api/founders-beta/intake', {
+        const response = await fetch('https://hub.citizenactivation.com/api/founders-beta/intake', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
